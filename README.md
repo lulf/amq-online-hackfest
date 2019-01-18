@@ -9,16 +9,21 @@ The Hackfest is prepared with 2 scenarios that highlight important use cases for
 * [Scenario 1 - Hackfest Services](scenario1.md)
 * [Scenario 2 - FestHack Technologies](scenario2.md)
 
-## Cluster setup
+## Installing AMQ Online
 
-The `templates` folder contains all the YAML files you need to install AMQ Online. Documentation for
-installing is provided at [linktodocs].
+The `templates` folder contains all the YAML files you need to install AMQ Online. Look at the [AMQ Online](docurl) documentation for instructions on how to install AMQ Online.
 
-### Example plans
+### Installing plans
 
-Example infrastructure configs and plans can be found in the `plans` folder. Once AMQ Online is
-installed, they can be applied by running `oc apply -f plans`. Run the following commands to verify
-that they are installed:
+We provide example configs and plans for AMQ Online to be used as a starting point for the
+scenarios. These can be found in the `plans` folder. Once AMQ Online is
+installed, they can be applied by running:
+
+```
+oc apply -f plans
+```
+
+Run the following commands to verify that they are installed:
 
 ```
 oc get standardinfraconfigs
