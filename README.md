@@ -7,7 +7,7 @@ This repository contains resources used in the AMQ Online Hackfest.
 The Hackfest is prepared with 2 scenarios that highlight important use cases for AMQ Online:
 
 * [Scenario 1 - Hackfest Services](scenario1.md)
-* [scenario2.md]
+* [Scenario 2 - FestHack Technologies](scenario2.md)
 
 ## Cluster setup
 
