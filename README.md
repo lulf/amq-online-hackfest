@@ -11,7 +11,10 @@ The Hackfest is prepared with 2 scenarios that highlight important use cases for
 
 ## Installing AMQ Online
 
-The `templates` folder contains all the YAML files you need to install AMQ Online. Look at the [AMQ Online](docurl) documentation for instructions on how to install AMQ Online.
+The `templates` folder contains all the YAML files you need to install AMQ Online. Look at the AMQ Online documentation for instructions on how to install AMQ Online:
+
+* [Installing and Managing AMQ Online on OpenShift Container Platform](https://doc-stage.usersys.redhat.com/documentation/en-us/red_hat_amq/7.2/html-single/installing_and_managing_amq_online_on_openshift_container_platform/)
+* [Using AMQ Online on OpenShift Container Platform](https://doc-stage.usersys.redhat.com/documentation/en-us/red_hat_amq/7.2/html-single/using_amq_online_on_openshift_container_platform/)
 
 ### Installing plans
 
