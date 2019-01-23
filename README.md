@@ -48,3 +48,15 @@ There are currently 2 Java-based clients:
 * jms-example-client - JMS-based configured to read AddressSpace info and use service account for authentication.
 
 Both examples come with resources that you deploy to provision messaging.
+
+# Uninstalling 
+
+```
+oc delete rolebindings -l app=enmasse -n kube-system
+oc delete clusterrolebindings -l app=enmasse
+oc delete crd -l app=enmasse
+oc delete clusterroles -l app=enmasse
+oc delete apiservices -l app=enmasse
+oc delete oauthclients -l app=enmasse
+oc delete project amq-online-infra
+```
