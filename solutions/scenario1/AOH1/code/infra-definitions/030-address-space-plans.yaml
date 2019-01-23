@@ -21,10 +21,8 @@ items:
   longDescription: Scenario 1 Address Spaces - 100 Users with room to grow up to 1000 Users
   resources:
   - name: broker
-    min: 2.0
     max: 11.0
   - name: router
-    min: 2.0
     max: 11.0
 - apiVersion: admin.enmasse.io/v1beta1
   kind: AddressSpacePlan
@@ -46,33 +44,6 @@ items:
   longDescription: Scenario 1 Address Spaces - 1000 Users with room to grow up to 10000 Users
   resources:
   - name: broker
-    min: 11.0
     max: 101.0
   - name: router
-    min: 11.0
-    max: 101.0
-- apiVersion: admin.enmasse.io/v1beta1
-  kind: AddressSpacePlan
-  metadata:
-    annotations:
-      enmasse.io/defined-by: scenario-1
-    labels:
-      app: enmasse
-    name: scenario-1-10000-customers
-  addressPlans:
-  - transactional-input-queue
-  - batch-input-queue
-  - customer-result-queue
-  - customer-alert-topic
-  addressSpaceType: standard
-  displayName: Scenario 1 Address Space Plan - 10000 Users
-  displayOrder: 0
-  shortDescription: Scenario 1 Address Spaces - 10000 Users
-  longDescription: Scenario 1 Address Spaces - 10000 Users with no room to grow beyond 10000 Users
-  resources:
-  - name: broker
-    min: 101.0
-    max: 101.0
-  - name: router
-    min: 101.0
     max: 101.0
