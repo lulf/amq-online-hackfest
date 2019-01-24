@@ -8,7 +8,7 @@ displayName: Online Queue
 displayOrder: 0
 shortDescription: Creates a small queue sharing underlying broker with other queues.
 longDescription: Creates a small queue sharing underlying broker with other queues.
-uuid: 0843743a-0503-11e8-91df-507b9def37d9
+uuid: 0843743a-0503-11e8-91df-507b9def37da
 addressType: queue
 requiredResources:
 - name: router

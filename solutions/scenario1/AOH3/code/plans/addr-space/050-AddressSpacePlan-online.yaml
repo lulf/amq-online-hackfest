@@ -20,5 +20,6 @@ resources:
 - name: aggregate
   max: 2.0
 addressPlans:
-- standard-small-queue
-- standard-small-topic
+- online-queue
+- online-topic
+- online-input-queue

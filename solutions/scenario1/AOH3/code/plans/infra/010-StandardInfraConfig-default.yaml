@@ -11,8 +11,8 @@ spec:
       memory: 512Mi
   broker:
     resources:
-      memory: 12Gi
-      storage: 65Gi
+      memory: 5Gi
+      storage: 50Gi
     addressFullPolicy: FAIL
   router:
     minReplicas: 1

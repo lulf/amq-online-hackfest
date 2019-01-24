@@ -12,7 +12,7 @@ uuid: c10377e0-db72-11e8-91a3-d45ddf138840
 addressType: topic
 requiredResources:
 - name: router
-  credit: 1.0
+  credit: 0.001
 - name: broker
-  credit: 1.0
+  credit: 0.001
 
