@@ -18,7 +18,7 @@ items:
         storage: 1Gi
     router:
       linkCapacity: 250
-      minReplicas: 1
+      minReplicas: 3
       resources:
         memory: 256Mi
     version: 0.26-SNAPSHOT

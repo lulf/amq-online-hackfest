@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring       http://camel.apache.org/schema/spring/camel-spring.xsd">
+    <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
+        <!-- route id="generate-order-route" streamCache="true">
+            <from id="route-timer" uri="timer:order?period=20"/>
+            <bean id="route-new-order" method="generateOrder" ref="orderGenerator"/>
+            <to id="route-to-incoming-orders" uri="amqp:queue:input_online"/>
+        </route -->
+        <route id="send-order-reply-route" streamCache="true">
+            <from id="route-from-incoming-orders" uri="amqp:queue:input_online"/>
+            <setHeader headerName="customerId" id="set-customer-id-header">
+                <xpath>/order/customer/@id</xpath>
+            </setHeader>
+            <setHeader headerName="destination-uri" id="set-destination-uri-header">
+                <simple>amqp:queue:result_${header.customerId}</simple>
+            </setHeader>
+            <delay id="processing-delay">
+                <constant>10000</constant>
+            </delay>
+            <routingSlip id="send-to-destination-uri-routing-slip">
+                <header>destination-uri</header>
+            </routingSlip>
+            <transform id="transform-to-alert-message">
+            	<simple>Processed order from ${header.customerId}</simple>
+            </transform>
+            <to id="send-order-alert" uri="amqp:topic:alerts"/>
+        </route>
+        <!-- route id="consume-customer-messages-A0001">
+            <from id="route-from-result-A0001" uri="amqp:queue:result_A0001"/>
+            <to id="log-A0001" uri="log:A0001"/>
+        </route>
+        <route id="consume-customer-messages-B0002">
+            <from id="route-from-result-B0002" uri="amqp:queue:result_B0002"/>
+            <to id="log-B0002" uri="log:B0002"/>
+        </route>
+        <route id="consume-customer-messages-C0003">
+            <from id="route-from-result-C0003" uri="amqp:queue:result_C0003"/>
+            <to id="log-C0003" uri="log:C0003"/>
+        </route>
+        <route id="consume-customer-messages-D0004">
+            <from id="route-from-result-D0004" uri="amqp:queue:result_D0004"/>
+            <to id="log-D0004" uri="log:D0004"/>
+        </route>
+        <route id="consume-customer-messages-E0004">
+            <from id="route-from-result-E0004" uri="amqp:queue:result_E0004"/>
+            <to id="log-E0004" uri="log:D0004"/>
+        </route -->
+    </camelContext>
+</beans>

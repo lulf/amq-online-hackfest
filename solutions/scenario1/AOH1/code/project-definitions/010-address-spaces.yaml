@@ -6,7 +6,12 @@ spec:
   type: standard
   plan: scenario-1-100-customers
   authenticationService:
-    type: standard
+    type: external
+    details:
+      host: standard-authservice
+      port: 5671
+      caCertSecretName: standard-authservice-cert
+      saslInitHost: scenario1
   endpoints:
     - name: messaging
       service: messaging

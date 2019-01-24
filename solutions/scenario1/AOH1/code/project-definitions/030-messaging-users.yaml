@@ -4,9 +4,9 @@ items:
 - apiVersion: user.enmasse.io/v1alpha1
   kind: MessagingUser
   metadata:
-    name: scenario-1-space.user13
+    name: scenario-1-space.admin
   spec:
-    username: user13
+    username: admin
     authentication:
       type: password
       password: cGFzc3dvcmQ=
